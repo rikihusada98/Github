@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #eaeaea;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: right;
+}
+
+.card{
+    margin: auto;
+    text-align: center;
+}
+
+/* The Close Button */
+.close {
+    color: #7fff00;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    
+
+}
+
+.close:hover,
+.close:focus {
+    color: #fff8dc;
+    text-decoration: none;
+    cursor: pointer;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #32CD32;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: lightblue;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #00FF00;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #00FF00;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+     <h4>Belajar JavaScript</h4>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          <div class="box-ii" id="cari">Mencari  <i class="fa fa-search fa-1x"></i></div>   
+          </li>
+        </ul>
+      </div>
+     </div>
+    </nav>
+
+     <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="../../index.html">
+                            Materi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../grafik/grafik.html">Grafik</a>
+                    </li>
+                    <li>
+                        <a href="../datepiker/datepicker.html">Datepicker</a>
+                    </li>
+                    <li>
+                        <a href="../map/maps.html">Peta Lokasi</a>
+                    </li>
+                    <li>
+                        <a href="../tab/tab.html">Tab</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Modal</a>
+                    </li>
+                    <li>
+                        <a href="../datatable/datatable.html">Data Tabel</a>
+                    </li>
+                    <li>
+                        <a href="../timeline/timeline.html">Timeline</a>
+                    </li>
+                    <li>
+                        <a href="#">AutoSelect</a>
+                    </li>
+                    <li>
+                        <a href="#">CKEditor</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <div class="tab">
+                          <button id="myBtn">Profile</button>
+                        </div>
+                        <h3>Wellcome</h3>
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
+
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="d-flex flex-row-reverse">
+                                <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="card" style="width: 20rem;">
+                                  <img class="card-img-top" src="img/riki.jpg" alt="Card image cap">
+                                  <div class="card-body">
+                                    <h4 class="card-title">Lalu Riki Husada</h4>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
